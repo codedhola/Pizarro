@@ -1,11 +1,40 @@
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Home from "./ui/Home";
+import Menu from "./features/menu/Menu";
+import Cart from "./features/cart/Cart";
+import CreateOrder from "./features/cart/CreateOrder";
+import Order from "./features/order/Order";
+import AppLayout from "./ui/AppLayout";
+
 function App() {
-  return (
-    <>
-      <div>
-        <h1>PIZZARO</h1>
-      </div>
-    </>
-  );
+  const router = createBrowserRouter([
+    {
+      element: <AppLayout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/menu",
+          element: <Menu />,
+        },
+        {
+          path: "/cart",
+          element: <Cart />,
+        },
+        {
+          path: "/order/new",
+          element: <CreateOrder />,
+        },
+        {
+          path: "/order/:orderId",
+          element: <Order />,
+        },
+      ],
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
 export default App;
