@@ -5,7 +5,7 @@ type Props = {
 };
 
 function CartItem({ item }: Props) {
-  const { pizzaId, name, quantity, totalPrice } = item;
+  const { name, quantity, totalPrice } = item;
 
   return (
     <li>

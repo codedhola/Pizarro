@@ -28,7 +28,7 @@ const fakeCart = [
 function Cart() {
   const cart: ICart[] = fakeCart;
 
-  console.log("CART ", cart);
+  // console.log("CART ", cart);
 
   return (
     <div>

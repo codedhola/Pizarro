@@ -1,21 +1,29 @@
-import React from "react";
 import Header from "./Header";
 import CartOverview from "../features/cart/CartOverview";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
+import Loader from "./Loader";
 
 type Props = {};
 
-const AppLayout = (props: Props) => {
+const AppLayout = ({}: Props) => {
+  const navigate = useNavigation();
+
+  const isLoading: boolean = navigate.state === "loading";
+
   return (
-    <div>
-      <Header />
+    <>
+      {isLoading && <Loader />}
 
-      <main>
-        <Outlet />
-      </main>
+      <div>
+        <Header />
 
-      <CartOverview />
-    </div>
+        <main>
+          <Outlet />
+        </main>
+
+        <CartOverview />
+      </div>
+    </>
   );
 };
 
