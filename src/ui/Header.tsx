@@ -5,10 +5,10 @@ type Props = {};
 
 const Header = ({}: Props) => {
   return (
-    <header>
-      <Link to="/">Pizza Groups</Link>
-      <p>Coded Hola</p>
+    <header className="bg-sky-900  px-4 py-3 uppercase sm:px-6 flex items-center justify-between border-b">
+      <Link to="/" className="tracking-widest">Pizza Groups</Link>
       <SearchOrder />
+      <p>Coded Hola</p>
     </header>
   );
 };

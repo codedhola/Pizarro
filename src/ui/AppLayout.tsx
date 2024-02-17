@@ -14,12 +14,13 @@ const AppLayout = ({}: Props) => {
     <>
       {isLoading && <Loader />}
 
-      <div>
+      <div className="grid h-screen grid-rows-[auto_1fr_auto] bg-stone-100">
         <Header />
-
-        <main>
-          <Outlet />
-        </main>
+        <div className="overflow-scroll">
+          <main>
+            <Outlet />
+          </main>
+        </div>
 
         <CartOverview />
       </div>
