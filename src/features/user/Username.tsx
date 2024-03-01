@@ -1,10 +1,12 @@
-import React from 'react'
+import { useSelector } from "react-redux"
 
 type Props = {}
 
 const Username = ({}: Props) => {
+  const username = useSelector((state: any) => state.user.username)
+
   return (
-    <div>Username</div>
+    <div>{username}</div>
   )
 }
 
